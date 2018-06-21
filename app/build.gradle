@@ -25,4 +25,19 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Timber support
+    implementation 'com.jakewharton.timber:timber:4.5.0'
+    // Butterknife support
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    // Glide support
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    // Volley support
+    implementation 'com.android.volley:volley:1.1.0'
+    // ExoPlayer support
+    // To avoid a red underline warning on appcompat-v7:27.1.1 due to exoplayer 2.8.1 is using 27.0.0
+    // https://stackoverflow.com/questions/42374151/all-com-android-support-libraries-must-use-the-exact-same-version-specification
+    implementation 'com.android.support:support-media-compat:27.1.1'
+    implementation 'com.google.android.exoplayer:exoplayer:2.8.1'
 }
