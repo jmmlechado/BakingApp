@@ -30,7 +30,7 @@ dependencies {
 
     // Butterknife support
     implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     // ExoPlayer support
     // To avoid a red underline warning on appcompat-v7:27.1.1 due to exoplayer 2.8.1 is using 27.0.0
     // https://stackoverflow.com/questions/42374151/all-com-android-support-libraries-must-use-the-exact-same-version-specification

@@ -2,6 +2,8 @@ package com.uni.bakingapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.uni.bakingapp.model.Recipe;
@@ -21,6 +23,8 @@ import timber.log.Timber;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.tv_hello) TextView mTextView;
+    @BindView(R.id.pb_loading_indicator) ProgressBar mProgressIndicator;
+    @BindView(R.id.tv_error_check_network) TextView mTextError;
 
     private ApiInterface recipesInterface;
 
@@ -46,17 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
     void loadRecipes(){
 
+        mProgressIndicator.setVisibility(View.VISIBLE);
         Call<List<Recipe>> call = recipesInterface.getRecipes();
         call.enqueue(new Callback<List<Recipe>>() {
             @Override
             public void onResponse(Call<List<Recipe>>call, Response<List<Recipe>>response) {
                 List<Recipe> recipes = response.body();
                 Timber.d("Number of recipes received: " + recipes.size());
+                mProgressIndicator.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onFailure(Call<List<Recipe>>call, Throwable t) {
+
                 Timber.d(t.toString());
+                mProgressIndicator.setVisibility(View.INVISIBLE);
+                mTextError.setVisibility(View.VISIBLE);
             }
         });
     }
