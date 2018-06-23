@@ -22,7 +22,9 @@ import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
+    // TODO Remove
     @BindView(R.id.tv_hello) TextView mTextView;
+
     @BindView(R.id.pb_loading_indicator) ProgressBar mProgressIndicator;
     @BindView(R.id.tv_error_check_network) TextView mTextError;
 
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // TODO Remove
     @OnClick(R.id.tv_hello)
     public void test(){
         mTextView.setText("Tested!");

@@ -6,6 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity" >
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_movie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <TextView
         android:id="@+id/tv_error_check_network"
         android:layout_width="wrap_content"
@@ -22,6 +27,7 @@
         android:layout_gravity="center"
         android:visibility="invisible" />
 
+    <!-- TODO Remove -->
     <TextView
         android:id="@+id/tv_hello"
         android:layout_width="wrap_content"
