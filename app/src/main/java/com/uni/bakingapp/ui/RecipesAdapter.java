@@ -1,4 +1,4 @@
-package com.uni.bakingapp;
+package com.uni.bakingapp.ui;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.uni.bakingapp.GlideApp;
+import com.uni.bakingapp.R;
 import com.uni.bakingapp.model.Recipe;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.uni.bakingapp;
+package com.uni.bakingapp.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +10,13 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.uni.bakingapp.BuildConfig;
+import com.uni.bakingapp.R;
 import com.uni.bakingapp.model.Recipe;
 import com.uni.bakingapp.network.ApiClient;
 import com.uni.bakingapp.network.ApiInterface;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -103,11 +104,9 @@ public class MainActivity extends AppCompatActivity implements RecipesAdapter.Re
     @Override
     public void onClick(Recipe recipe) {
         Context context = this;
-/*
-        Class destinationClass = DetailActivity.class;
-        Intent intentToStartDetailActivity = new Intent(context, destinationClass);
-        intentToStartDetailActivity.putExtra(Intent.EXTRA_TEXT, movie);
-        startActivityForResult(intentToStartDetailActivity,CHECK_FAVORITE);
-*/
+        Intent intent = new Intent(context, DetailActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT, recipe);
+        startActivity(intent);
+
     }
 }
